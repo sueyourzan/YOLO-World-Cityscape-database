@@ -38,9 +38,69 @@ YOLO-World/
 pip install ultralytics torch matplotlib pandas numpy pyyaml
 ```
 
+## 克隆后首次设置
+
+> 仓库不包含数据集和预训练权重（已在 `.gitignore` 中排除）。克隆后需手动准备以下内容：
+
+### 1. 下载 Cityscapes 数据集
+
+从 [Cityscapes 官网](https://www.cityscapes-dataset.com/downloads/) 下载以下文件（需注册账号）：
+
+| 文件 | 内容 | 大小 |
+|------|------|------|
+| `leftImg8bit_trainvaltest.zip` | 全部图像 (train/val/test) | ~11GB |
+| `gtFine_trainvaltest.zip` | 精细标注 (train/val) | ~241MB |
+
+下载后按以下结构放置：
+
+```
+data/
+└── cityscapes/
+    ├── leftImg8bit/
+    │   ├── train/
+    │   │   ├── aachen/
+    │   │   ├── bochum/
+    │   │   └── ...
+    │   ├── val/
+    │   └── test/
+    └── gtFine/
+        ├── train/
+        └── val/
+```
+
+```bash
+# 解压命令示例
+unzip leftImg8bit_trainvaltest.zip -d data/cityscapes/
+unzip gtFine_trainvaltest.zip -d data/cityscapes/
+```
+
+### 2. 下载预训练权重
+
+从 [Ultralytics 发布页](https://github.com/ultralytics/assets/releases) 下载 YOLO-World 权重，或由 ultralytics 首次运行时自动下载。
+
+手动下载后放置于 `weights/` 目录：
+
+```bash
+mkdir -p weights
+# 最小可用权重（推荐）
+wget https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8s-worldv2.pt -P weights/
+```
+
+### 3. 转换为 YOLO 格式
+
+```bash
+python prepare_cityscapes_dataset.py
+```
+
+处理完成后 `data/cityscapes2/` 目录即为 YOLO 格式数据集。
+
+---
+
 ## 快速开始
 
 ### 1. 准备数据集
+
+> 首次使用请先完成上方「克隆后首次设置」。
 
 ```bash
 python prepare_cityscapes_dataset.py
