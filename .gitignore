@@ -1,0 +1,30 @@
+# 数据集（23GB+，不纳入版本控制）
+data/
+
+# 模型权重（~600MB，不纳入版本控制）
+weights/
+
+# 训练/验证/预测输出
+runs/
+
+# IDE 配置
+.idea/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db

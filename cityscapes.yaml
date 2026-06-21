@@ -1,0 +1,57 @@
+# cityscapes_correct.yaml
+# Cityscapes数据集配置文件（使用cityscapes2目录）
+
+# 数据集根目录
+path: D:/code/Python/deep_learning_experiment/deep_learning/YOLO-World/data/cityscapes2
+
+# 训练和验证图像路径（相对于path）
+train: images/train
+val: images/val
+test: images/test
+
+# 类别数量
+nc: 19
+
+# 类别名称
+names:
+  0: person
+  1: rider
+  2: car
+  3: truck
+  4: bus
+  5: train
+  6: motorcycle
+  7: bicycle
+  8: traffic light
+  9: traffic sign
+  10: building
+  11: vegetation
+  12: sky
+  13: road
+  14: ground
+  15: sidewalk
+  16: fence
+  17: bridge
+  18: wall
+
+# YOLO-World 特定配置
+class_texts:
+  - person
+  - rider
+  - car
+  - truck
+  - bus
+  - train
+  - motorcycle
+  - bicycle
+  - traffic light
+  - traffic sign
+  - building
+  - vegetation
+  - sky
+  - road
+  - ground
+  - sidewalk
+  - fence
+  - bridge
+  - wall
